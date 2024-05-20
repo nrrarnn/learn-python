@@ -6,9 +6,7 @@
 
 # the last object in will be the first one out of the stack
 
-# stack implementation
-
-# List
+# Implementation stack using List
 
 # Stack operation 
 
@@ -21,6 +19,16 @@ stack.append(20)
 stack.append(30)
 print(stack)  #output : [20,30]
 
+stacks = []
+n = int(input("Limit of stack : "))
+
+def push():
+  if len(stacks) == n:
+    print('List is full!')
+  else:
+    element = input("Enter the element : ")
+    stacks.append(element)
+    print(stacks)
 
 # Pop
 # L.pop()
@@ -29,6 +37,13 @@ print(stack)  #output : [20,30]
 stack.pop()
 print(stack) #output : [20]
 
+def pop_element():
+  if not stacks:
+    print("stack is empty")
+  else:
+    e = stack.pop()
+    print(f"remove element : {e}")
+    print(stacks)
 
 
 # IsEmpty
@@ -43,5 +58,33 @@ stack.append(10)
 stack.append(20)
 stack.append(30)
 stack[-1]    #Output : 30
+
+
+# Implementation stack with modules
+
+import collections
+
+stack_2 = collections.deque()
+# push
+stack_2.append(20)
+stack_2.append(50)
+# pop
+stack_2.pop()
+
+print(stack_2)
+
+import queue
+
+stack_3 = queue.LifoQueue()
+# push
+stack_3.put(20)
+stack_3.put(40)
+
+# pop
+stack_3.get()
+stack_3.get()
+
+# if stack is empty and u using get, u should using timeout
+stack_3.get(timeout=1)
 
 
