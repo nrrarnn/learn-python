@@ -32,3 +32,16 @@ q.popleft()
 # delete 10
 print(q)
 
+
+# Priority queue
+import queue
+# lowest
+priorityQueue = queue.PriorityQueue()
+
+priorityQueue.put(30)
+priorityQueue.put(20)
+priorityQueue.put(10)
+priorityQueue.put(50)
+
+priorityQueue.get()
+# will delete value 10 because it is deleted based on the smallest value
